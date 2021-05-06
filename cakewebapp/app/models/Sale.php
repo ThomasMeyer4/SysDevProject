@@ -29,6 +29,13 @@
             return $stmt->fetchAll();
         }
 
+        public function getTotalPrice() {
+            $stmt = self::$connection->prepare("SELECT order.price FROM order, sale WHERE order.order_id=sale.order_id");
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Sale");
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
         public function insert(){
             $stmt = self::$connection->prepare("INSERT INTO sale(order_id) VALUES (:order_id)");
             $stmt->execute(['order_id'=>$this->order_id]);

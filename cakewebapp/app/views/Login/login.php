@@ -22,9 +22,6 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
         <div class="checkbox mb-3">
-          <label>
-            Need an account? Register <a href="<?=BASE?>/Login/register">here</a>.<br />
-          </label>
         </div>
         <input type="submit" class="btn btn-lg btn-primary" name="action" value="Login"></input>
         <p class="mt-5 mb-3 text-muted">&copy;</p>

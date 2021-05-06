@@ -41,9 +41,9 @@
             $stmt->execute(['name'=>$this->name, 'quantity'=>$this->quantity]);
         }      
 
-        public function updateQuantity(){
+        public function updateQuantity($quantity){
             $stmt = self::$connection->prepare("UPDATE inventory SET quantity = :quantity WHERE inventory_id = :inventory_id");
-            $stmt->execute(['inventory_id'=>$this->inventory_id, 'quantity'=>$this->quantity]);
+            $stmt->execute(['inventory_id'=>$this->inventory_id, 'quantity'=>$quantity]);
         }
 
         public function delete()

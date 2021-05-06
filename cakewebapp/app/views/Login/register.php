@@ -31,7 +31,6 @@
         <input type="text" id="inputPosition" name="position" class="form-control" placeholder="Position">
         <br class="checkbox mb-3">
         </br>
-        Have an account? <a href="<?=BASE?>/Login/login">Login In</a>.<br />
         <input type="submit" class="btn btn-lg btn-primary" name="action" value="Register"></input>
         <p class="mt-5 mb-3 text-muted">&copy;</p>
       </form>
