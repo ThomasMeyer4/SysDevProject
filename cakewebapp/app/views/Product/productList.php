@@ -57,33 +57,35 @@
 <div class="jumbotron jumbotron-fluid text-center">
   </br>
   </br>
-  <h1 class="display-4">Sales</h1>
+  <h1 class="display-4">Products</h1>
   </br>
   </br>
 </div>
+<a href='<?=BASE?>/Product/addProduct'>Add New Product</a>
+<form action="" method="post" class="form-inline my-2 my-lg-0" style="margin-left: 350px;">
+					<input type="text" name="input" placeholder="Search" aria-label="Search">
+					<input type="submit" name="search" value="Search">
+</form>
 <div>
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Order#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            foreach($data['sales'] as $order){
-              echo "
-              <tr>
-                  <td>$order->order_id</td>
-                  <td>$order->date</td>
-                  <td>$order->price</td>
-              <tr>";
-            }
-        ?>
+      <?php
+			foreach ($data as $product) {
+				echo "<div class='col-sm-3'>
+						<div class='card' style='width: 15rem;'>
+						<div class='card-header text-center'>$product->name</div>
+							<img class='card-img-top smallimg mx-auto' src='" . BASE . "/uploads/$product->filename' alt='$product->name' style='width:150px;height:150px'>
+							<div class='card-body'>
+								<p class='card-text text-center'>$product->description</p>
+								<p class='card-text text-center'>Price: $product->price$ 
+							</div>
+							<div class='card-footer text-center'>
+									<a href='" . BASE . "/Product/modify/$product->product_id' class='btn btn-success btn-sm'>Edit</a>
+									<a href='" . BASE . "/Product/delete/$product->product_id' class='btn btn-danger btn-sm'>Delete</a>
+							</div>
+						</div>
+					</div>";
+			} ?>
         <tbody>
     </table>
 </div>
-<p>Total: <?=$data['totalSale']->TotalPrice ?></p>
 </body>
 </html>

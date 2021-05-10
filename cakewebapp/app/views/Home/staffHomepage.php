@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html>
 <head>
-	<title>Cake</title>
+	<title>Dess'Art</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./../css/global.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
@@ -57,33 +58,13 @@
 <div class="jumbotron jumbotron-fluid text-center">
   </br>
   </br>
-  <h1 class="display-4">Sales</h1>
+  <h1 class="display-4">Orders</h1>
   </br>
   </br>
 </div>
-<div>
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th scope="col">Order#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            foreach($data['sales'] as $order){
-              echo "
-              <tr>
-                  <td>$order->order_id</td>
-                  <td>$order->date</td>
-                  <td>$order->price</td>
-              <tr>";
-            }
-        ?>
-        <tbody>
-    </table>
-</div>
-<p>Total: <?=$data['totalSale']->TotalPrice ?></p>
 </body>
 </html>
+
+
+
+

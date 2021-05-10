@@ -1,14 +1,35 @@
 <?php
     namespace App\controllers;
 
-
     #[\App\core\LoginFilter]
     class OrderController extends \App\core\Controller {
         function index(){
-            $order = new \App\models\Order();
-            $orders = $order->getAll();
-            $confirmations = $order->countAllConfirmation();
-            $this->view('Order/orderList', ['orders'=>$orders, 'confirmations'=>$confirmations]);
+
+            if (isset($_POST["search"])){
+                $order = new \App\models\Order();
+                $orders = $order->findBySearch($_POST["input"]);
+                $this->view('Order/orderSearchList', ['orders'=>$orders]);
+            } else {
+                $order = new \App\models\Order();
+                $orders = $order->getAll();
+                $confirmations = $order->countAllConfirmation();
+                $this->view('Order/orderList', ['orders'=>$orders, 'confirmations'=>$confirmations]);
+            }
+
+            
+
+            /*
+if (isset($_POST["search"])){
+				$product = new \App\models\Product();
+				$product = $product->searchByName($_POST["input"]);
+				$this->view('Product/productSearchList', ['product' => $product]);
+			}else {
+                $product = new \App\models\Product();
+                $products = $product->getAll();
+                $this->view('Product/productList', $products);
+            }
+        }
+            */
         }
 
         function addNewOrder() {
@@ -34,11 +55,5 @@
             $totalSale = $order->getSumCompletedPrice();
             $this->view('Order/saleList', ['sales'=>$sales, 'totalSale'=>$totalSale]);
         }
-
-
-
-        
     }
-
-    
 ?>

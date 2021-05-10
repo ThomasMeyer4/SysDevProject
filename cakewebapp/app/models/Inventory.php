@@ -21,6 +21,13 @@
             return $stmt->fetch();
         }
 
+        public function getQuantityByInventoryID($inventory_id){
+            $stmt = self::$connection->prepare("SELECT quantity FROM inventory WHERE inventory_id = :inventory_id");
+            $stmt->execute(['inventory_id'=>$inventory_id]);
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Inventory");
+            return $stmt->fetch();
+        }
+
         public function findBySearch($search) {
             $stmt = self::$connection->prepare("SELECT * FROM inventory WHERE name LIKE :name");
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Inventory");
@@ -36,6 +43,12 @@
             return $stmt->fetchAll();
         }
 
+        public function searchByName($input){
+            $stmt = self::$connection->query("SELECT * FROM inventory WHERE name LIKE '%$input%'");
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\inventory");
+            return $stmt->fetchAll();
+        }
+
         public function insert(){
             $stmt = self::$connection->prepare("INSERT INTO inventory(name, quantity) VALUES (:name, :quantity)");
             $stmt->execute(['name'=>$this->name, 'quantity'=>$this->quantity]);
@@ -46,10 +59,9 @@
             $stmt->execute(['inventory_id'=>$this->inventory_id, 'quantity'=>$quantity]);
         }
 
-        public function delete()
-	    {
-		    $stmt = self::$connection->prepare("DELETE FROM inventory WHERE inventory_id=:inventory_id");
-		    $stmt->execute(['inventory_id' => $this->inventory_id]);
-	    }
+        public function delete(){
+            $stmt = self::$connection->prepare("DELETE FROM inventory WHERE inventory_id=:inventory_id");
+            $stmt->execute(['inventory_id' => $this->inventory_id]);
+        }
     }
 ?>

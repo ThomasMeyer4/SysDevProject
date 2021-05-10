@@ -57,33 +57,43 @@
 <div class="jumbotron jumbotron-fluid text-center">
   </br>
   </br>
-  <h1 class="display-4">Sales</h1>
+  <h1 class="display-4">Orders</h1>
   </br>
   </br>
 </div>
-<div>
-    <table class="table table-dark">
+<form action="" method="post" class="form-inline my-2 my-lg-0" style="margin-left: 350px;">
+					<input type="text" name="input" placeholder="Search" aria-label="Search">
+					<input type="submit" name="search" value="Search">
+<a href='<?=BASE?>/Order/addNewOrder'>Add New Order</a>
+<div class='container'>
+    <table class="table table-bordered table-light">
         <thead>
             <tr>
-                <th scope="col">Order#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Price</th>
+                <th scope="col" class="bg-success">Order#</th>
+                <th scope="col" class="bg-success">Description</th>
+                <th scope="col" class="bg-success">Date</th>
+                <th scope="col" class="bg-success">Price</th>
+                <th scope="col" class="bg-success">Status</th>
             </tr>
         </thead>
         <tbody>
         <?php
-            foreach($data['sales'] as $order){
+            foreach($data["orders"] as $item){
               echo "
               <tr>
-                  <td>$order->order_id</td>
-                  <td>$order->date</td>
-                  <td>$order->price</td>
+                  <td>$item->order_id</td>
+                  <td>$item->description</td>
+                  <td>$item->date</td>
+                  <td>$item->price</td>
+                  <td>$item->status</td>
               <tr>";
             }
         ?>
         <tbody>
     </table>
 </div>
-<p>Total: <?=$data['totalSale']->TotalPrice ?></p>
+<p>Pending: <?=$data['confirmations']->pendingCount ?></p>
+<p>Accepted: <?=$data['confirmations']->acceptedCount ?></p>
+<p>Denied: <?=$data['confirmations']->deniedCount ?></p>
 </body>
 </html>

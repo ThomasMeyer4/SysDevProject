@@ -21,11 +21,9 @@
             return $stmt->fetch();
         }
 
-        public function findBySearch($search) {
-            $stmt = self::$connection->prepare("SELECT * FROM product WHERE name LIKE :name");
-            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Product");
-            $search = "%".$search."%";
-            $stmt->execute(['search'=>$search]);
+        public function searchByName($input){
+            $stmt = self::$connection->query("SELECT * FROM product WHERE name LIKE '%$input%'");
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\product");
             return $stmt->fetchAll();
         }
 
@@ -37,8 +35,8 @@
         }
 
         public function insert(){
-            $stmt = self::$connection->prepare("INSERT INTO product(name, picture_id, description, price) VALUES (:name, :picture_id, :description, :description)");
-            $stmt->execute(['name'=>$this->name, 'picture_id'=>$this->picture_id, 'description'=>$this->description, 'description'=>$this->description]);
+            $stmt = self::$connection->prepare("INSERT INTO product(name, staff_id, description, price, filename) VALUES (:name, :staff_id, :description, :price, :filename)");
+            $stmt->execute(['name'=>$this->name, 'staff_id'=>$this->staff_id, 'description'=>$this->description, 'price'=>$this->price, 'filename'=>$this->filename]);
         }      
 
         public function updateDescription(){

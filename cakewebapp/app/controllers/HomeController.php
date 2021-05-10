@@ -1,12 +1,9 @@
 <?php
     namespace App\controllers;
-
-
     #[\App\core\LoginFilter]
     class HomeController extends \App\core\Controller {   
-        
-        function index() {
-            $this->view('Home/home', $_SESSION['staff_id']);
+        function staffHomepage() {
+            $this->view('Home/staffHomepage', $_SESSION['user_id']);
         }
     }
     

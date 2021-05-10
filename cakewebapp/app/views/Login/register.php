@@ -23,12 +23,6 @@
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
         <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
         <input type="password" id="inputConfirmPassword" name="confirm_password" class="form-control" placeholder="Retype Password">
-        <label for="inputFirstName" class="sr-only">First name</label>
-        <input type="text" id="inputFirstName" name="first_name" class="form-control" placeholder="First Name">
-        <label for="inputLastName" class="sr-only">Last name</label>
-        <input type="text" id="inputLastName" name="last_name" class="form-control" placeholder="Last Name">
-        <label for="inputPosition" class="sr-only">Position</label>
-        <input type="text" id="inputPosition" name="position" class="form-control" placeholder="Position">
         <br class="checkbox mb-3">
         </br>
         <input type="submit" class="btn btn-lg btn-primary" name="action" value="Register"></input>

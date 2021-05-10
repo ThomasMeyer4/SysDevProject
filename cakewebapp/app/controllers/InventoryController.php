@@ -5,9 +5,16 @@
     #[\App\core\LoginFilter]
     class InventoryController extends \App\core\Controller {   
         function index(){
-            $inventory = new \App\models\Inventory();
-            $items = $inventory->getAll();
-            $this->view('Inventory/inventoryList', $items);
+            
+            if (isset($_POST["search"])){
+				$inventory = new \App\models\Inventory();
+				$items = $inventory->searchByName($_POST["input"]);
+				$this->view('Inventory/inventorySearchList', ['items' => $items]);
+			} else {
+                $inventory = new \App\models\Inventory();
+                $items = $inventory->getAll();
+                $this->view('Inventory/inventoryList', $items);
+            }
         }
 
         function addNewItem() {
@@ -22,10 +29,25 @@
             }
         }
 
-        function addQuantity($inventory_id, $quantity) {
+        function addQuantity($inventory_id) {
             $inventory = new \App\models\Inventory();
-            $inventory = $inventory->findByInventoryID($inventory_id);         
+            $inventory = $inventory->findByInventoryID($inventory_id);
+            $quantity = $inventory->getQuantityByInventoryID($inventory_id);   
+            $quantity = $inventory->quantity + 1;  
             $inventory->updateQuantity($quantity);
+            header('location:'.BASE.'/Inventory/index');
+        }
+
+        function removeQuantity($inventory_id) {
+            $inventory = new \App\models\Inventory();
+            $inventory = $inventory->findByInventoryID($inventory_id);
+            $quantity = $inventory->getQuantityByInventoryID($inventory_id);
+            if ($inventory->quantity > 0) {
+                $quantity = $inventory->quantity - 1;       
+                $inventory->updateQuantity($quantity);
+            }
+            
+            header('location:'.BASE.'/Inventory/index');
         }
     }
     

@@ -4,7 +4,7 @@
     #[\Attribute]
     class LoginFilter {
         public function execute() {
-            if (!isset($_SESSION['staff_id'])){
+            if (!isset($_SESSION['user_id'])){
                 header('location:'.BASE.'/Login/login');
             }
         }

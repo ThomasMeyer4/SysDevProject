@@ -13,8 +13,15 @@
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Staff");
             return $stmt->fetch();
         }
+
+        public function findByUserId($user_id){
+            $stmt = self::$connection->prepare("SELECT * FROM staff WHERE user_id = :user_id");
+            $stmt->execute(['user_id'=>$user_id]);
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Staff");
+            return $stmt->fetch();
+        }
     
-        public function findByUserID($staff_id){
+        public function findByStaffID($staff_id){
             $stmt = self::$connection->prepare("SELECT * FROM staff WHERE staff_id = :staff_id");
             $stmt->execute(['staff_id'=>$staff_id]);
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Staff");

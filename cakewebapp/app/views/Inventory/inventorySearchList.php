@@ -46,7 +46,7 @@
         </li>
         <li class="nav-item">
           <form action="<?=BASE?>/Login/logout">
-            <button class="btn btn-success me-2" type="submit">Logout</button>
+            <button class="btn btn-success me" type="submit">Logout</button>
           </form>
         </li>
       </ul>
@@ -57,33 +57,38 @@
 <div class="jumbotron jumbotron-fluid text-center">
   </br>
   </br>
-  <h1 class="display-4">Sales</h1>
+  <h1 class="display-4">Inventory</h1>
   </br>
   </br>
 </div>
-<div>
+<a href='<?=BASE?>/Inventory/addNewItem'>Add New Item</a>
+<form action="" method="post" class="form-inline my-2 my-lg-0" style="margin-left: 350px;">
+					<input type="text" name="input" placeholder="Search" aria-label="Search">
+					<input type="submit" name="search" value="Search">
+</form>
+<div class= 'container'>
     <table class="table table-dark">
         <thead>
             <tr>
-                <th scope="col">Order#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Price</th>
+                <th scope="col">Ingredients</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-        <?php
-            foreach($data['sales'] as $order){
-              echo "
-              <tr>
-                  <td>$order->order_id</td>
-                  <td>$order->date</td>
-                  <td>$order->price</td>
+        
+         <?php
+         if (!empty($data['items'])){
+           	foreach ($data['items'] as $items) {
+              echo "<tr>
+              <td>$items->name</td>
+              <td>$items->quantity</td>
+              <td><a type='button' href='".BASE."/Inventory/addQuantity/".$items->inventory_id."/' class='btn btn-success'>+</a> <a type='button' href='".BASE."/Inventory/removeQuantity/".$items->inventory_id."/' class='btn btn-danger'>-</a></td>
               <tr>";
             }
-        ?>
+			    } ?>
         <tbody>
     </table>
 </div>
-<p>Total: <?=$data['totalSale']->TotalPrice ?></p>
 </body>
 </html>
