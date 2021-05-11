@@ -5,6 +5,9 @@
         function staffHomepage() {
             $this->view('Home/staffHomepage', $_SESSION['user_id']);
         }
+
+
+        
     }
     
 ?>

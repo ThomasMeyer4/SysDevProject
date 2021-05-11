@@ -4,10 +4,11 @@
   <title>Dess'Art</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link href="./../css/global.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./../css/home.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-static-top navbar-light bg-white navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-static-top navbar-light navbar-custom">
   <div class="container-fluid">
     <button
       class="navbar-toggler"
@@ -21,7 +22,7 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-      <ul class="navbar-nav nav-justified me-auto ">
+      <ul class="navbar-nav nav-justified me-auto">
         <li class="nav-item active">
           <a class="nav-link" href='<?=BASE?>/Website/homepage'>Home<span class="sr-only"></span></a>
         </li>

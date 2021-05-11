@@ -28,6 +28,9 @@
         <li class="nav-item">
           <a class="nav-link" href='<?=BASE?>/Order/sale'>Sale <span class="sr-only"></span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href='<?=BASE?>/Inventory/index'>Inventory</a>
+        </li>
       </ul>
     </div>
     <div
@@ -40,7 +43,7 @@
     <div class="collapse navbar-collapse" id="navbarRightAlignExample">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href='<?=BASE?>/Inventory/index'>Inventory</a>
+          <a class="nav-link" href='<?=BASE?>/Settings/index'>Settings <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='<?=BASE?>/Product/index'>Website <span class="sr-only"></span></a>
@@ -54,12 +57,12 @@
     </div>
   </div>
 </nav>
-</br></br></br></br></br>
+</br></br></br>
 <div class="jumbotron jumbotron-fluid text-center">
   </br>
   </br>
-  <h1 class="display-4">Orders</h1>
   </br>
+  <h1 class="display-4">Orders</h1>
   </br>
 </div>
 </body>

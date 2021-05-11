@@ -4,32 +4,16 @@
     #[\App\core\LoginFilter]
     class OrderController extends \App\core\Controller {
         function index(){
-
             if (isset($_POST["search"])){
                 $order = new \App\models\Order();
                 $orders = $order->findBySearch($_POST["input"]);
-                $this->view('Order/orderSearchList', ['orders'=>$orders]);
+                $this->view('Order/orderSearchList', $orders);
             } else {
                 $order = new \App\models\Order();
                 $orders = $order->getAll();
                 $confirmations = $order->countAllConfirmation();
                 $this->view('Order/orderList', ['orders'=>$orders, 'confirmations'=>$confirmations]);
             }
-
-            
-
-            /*
-if (isset($_POST["search"])){
-				$product = new \App\models\Product();
-				$product = $product->searchByName($_POST["input"]);
-				$this->view('Product/productSearchList', ['product' => $product]);
-			}else {
-                $product = new \App\models\Product();
-                $products = $product->getAll();
-                $this->view('Product/productList', $products);
-            }
-        }
-            */
         }
 
         function addNewOrder() {
@@ -43,7 +27,7 @@ if (isset($_POST["search"])){
                 $order->price = $_POST['price'];
                 $order->insert();
                 
-                header('location:'.BASE.'/Order/index/');
+                header('location:'.BASE.'/Order/index');
                 } else {
                     $this->view('Order/orderForm');
             }
@@ -55,5 +39,11 @@ if (isset($_POST["search"])){
             $totalSale = $order->getSumCompletedPrice();
             $this->view('Order/saleList', ['sales'=>$sales, 'totalSale'=>$totalSale]);
         }
-    }
+
+        function detail($order_id) {
+            $order = new \App\models\Order();
+            $order = $order->findByOrderId($order_id);
+            $this->view('Order/viewOrderDetail', $order);
+            }
+        }
 ?>

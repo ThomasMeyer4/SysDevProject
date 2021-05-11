@@ -18,9 +18,19 @@
         }
 
         function products() {
-            $product = new \App\models\Product();
-            $products = $product->getAll();
-            $this->view('Website/productsPage', $products);
+            if (isset($_POST["search"])){
+                $product = new \App\models\Product();
+                $products = $product->searchByName($_POST["input"]);
+                $this->view('Website/productSearchList', $products);
+            }else {
+                $product = new \App\models\Product();
+                $products = $product->getAll();
+                $this->view('Website/productsPage', $products);
+            } 
+        }
+
+        function moreDetails(){
+
         }
     }
     

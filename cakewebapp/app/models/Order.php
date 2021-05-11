@@ -15,11 +15,9 @@
         }
 
         public function findBySearch($search) {
-            $stmt = self::$connection->prepare("SELECT * FROM cake_order WHERE order_id LIKE :search OR description
-            LIKE :search OR date LIKE :search OR confirmation LIKE :search OR status LIKE :search");
-            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Order");
-            $search = "%".$search."%";
-            $stmt->execute(['search'=>$search]);
+            $stmt = self::$connection->prepare("SELECT * FROM cake_order WHERE CONCAT(order_id, description, confirmation, status) LIKE '%$search%'");
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Order");
+            $stmt->execute();
             return $stmt->fetchAll();
         }
 
