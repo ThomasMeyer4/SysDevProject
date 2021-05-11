@@ -1,11 +1,9 @@
 <?php
     namespace App\controllers;
 
-
     #[\App\core\LoginFilter]
     class InventoryController extends \App\core\Controller {   
-        function index(){
-            
+        function index(){   
             if (isset($_POST["search"])){
 				$inventory = new \App\models\Inventory();
 				$items = $inventory->searchByName($_POST["input"]);
@@ -19,11 +17,11 @@
 
         function addNewItem() {
             if(isset($_POST['action'])){
-               $inventory = new \App\models\Inventory();
-               $inventory->name = $_POST['name'];
-               $inventory->quantity = $_POST['quantity'];
-               $inventory->insert();
-               header('location:'.BASE.'/Inventory/index/');
+                $inventory = new \App\models\Inventory();
+                $inventory->name = $_POST['name'];
+                $inventory->quantity = $_POST['quantity'];
+                $inventory->insert();
+                header('location:'.BASE.'/Inventory/index/');
             } else {
                 $this->view('Inventory/inventoryForm');
             }

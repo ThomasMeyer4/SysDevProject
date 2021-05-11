@@ -7,12 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" enctype="multipart/form-data">
-					<label>Name: <input type="text" name="name" /></label><br />
-					<label>Quantity: <input type="text" name="quantity" /></label><br />
-                    <br>
-				<input type="submit" name="action" />
-	</form>
+    
     
 </body>
 </html>
@@ -76,18 +71,17 @@
   <h1 class="display-4">Inventory</h1>
   </br>
 </div>
-<a href='<?=BASE?>/Inventory/addNewItem'>Add New Item</a>
+</br></br>
 <div class="container">
-<div class="d-flex justify-content-end">
-  <form action="" method="post" class="form-inline mb-2 mb-lg-0">
-	<input type="search" name="input" placeholder="" aria-label="Search">
-  <button type="submit" name="search" class="btn btn-success">
-  <i class="fa fa-search"></i>
-  </button>
+<div class="d-flex justify-content-lg-center">
+<form action="" method="post" enctype="multipart/form-data">
+	<label>Name: <input type="text" name="name" /></label><br />
+    <br>
+	<label>Quantity: <input type="text" name="quantity" /></label><br />
+    <br>
+	<input type="submit" name="action" />
 </form>
 </div>
 </div>
-</br></br>
-
 </body>
 </html>

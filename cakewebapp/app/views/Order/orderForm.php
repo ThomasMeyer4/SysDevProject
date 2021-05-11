@@ -72,13 +72,17 @@
     <h1 class="display-4">Add a New Order!</h1>
     </br>
 </div>
-    </br>
+</br>
+<div class="container">
+<div class="d-flex justify-content-lg-center">
     <form action="" method="post" enctype="multipart/form-data">
-        <label>Client_id: <input type="text" name="client_id" /></label><br />
-        <label>Description: <input type="text" name="description" /></label><br />
-        <label>Price <input type="text" name="price" /></label><br />
+        <label>Client id: <input type="text" name="client_id" /></label><br /><br />
+        <label>Description: <input type="text" name="description" /></label><br /><br />
+        <label>Price: <input type="text" name="price" /></label><br />
         <br>
 		<input type="submit" name="action" />
 	</form>
+</div>
+</div>
 </body>
 </html>

@@ -3,7 +3,10 @@
     #[\App\core\LoginFilter]
     class HomeController extends \App\core\Controller {   
         function staffHomepage() {
-            $this->view('Home/staffHomepage', $_SESSION['user_id']);
+            $order = new \App\models\Order();
+            $orders = $order->getAll();
+            $confirmations = $order->countAllConfirmation();
+            $this->view('Home/staffHomepage', ['orders'=>$orders, 'confirmations'=>$confirmations]);
         }
 
 

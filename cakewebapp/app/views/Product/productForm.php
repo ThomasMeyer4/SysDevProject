@@ -52,28 +52,18 @@
 </nav>
 </br></br></br>
 <div class="jumbotron jumbotron-fluid text-center">
-  </br>
-  </br>
-  </br>
-  <h1 class="display-4">Website Management</h1>
-  </br>
+    </br></br></br>
+    <h3 class="display-4">Add a New Product!</h3>
+    </br>
 </div>
-<a href='<?=BASE?>/Product/addProduct'>Add New Product</a>
+</br>
 <div class="container">
-<div class="d-flex justify-content-end">
-<form action="" method="post" class="form-inline mb-2 mb-lg-0">
-	<input type="search" name="input" placeholder="" aria-label="Search">
-  <button type="submit" name="search" class="btn btn-success">
-  <i class="fa fa-search"></i>
-  </button>
-</form>
-</div>
-</div>
+<div class="d-flex justify-content-lg-center">
 <form action="" method="post" enctype="multipart/form-data">
-        <label>Name: <input type="text" name="name" /></label><br />
-        <label>Description: <input type="text" name="description" /></label><br />
-        <label>Price <input type="text" name="price" /></label><br />
-        <label>Select an image file to upload: <input type= "file" name="myImage" /></label><br>
+        <label>Name: <input type="text" name="name" /></label><br /><br />
+        <label>Description: <input type="text" name="description" /></label><br /><br />
+        <label>Price <input type="text" name="price" /></label><br /><br />
+        <label>Select an image file to upload: <input type="file" name="myImage" /></label><br>
 		<input type="submit" name="action" />
 </form>
 </body>

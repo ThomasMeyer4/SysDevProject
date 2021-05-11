@@ -57,7 +57,7 @@
   <h1 class="display-4">Inventory</h1>
   </br>
 </div>
-<a href='<?=BASE?>/Inventory/addNewItem'>Add New Item</a>
+</br>
 <div class="container">
 <div class="d-flex justify-content-end">
   <form action="" method="post" class="form-inline mb-2 mb-lg-0">
@@ -68,28 +68,33 @@
 </form>
 </div>
 </div>
-</br></br>
+</br>
+<div class="d-flex justify-content-lg-center">
+<form action="<?=BASE?>/Inventory/addNewItem">
+  <button class="btn btn-success me-2" type="submit">Add Item <i class="fas fa-plus"></i></button>
+</form>
+</div>
+</br>
 <div class= 'container'>
     <table class="table table-bordered table-light">
         <thead>
             <tr>
-                <th scope="col class="bg-success"">Ingredients</th>
-                <th scope="col class="bg-success"">Quantity</th>
-                <th scope="col class="bg-success"">Actions</th>
+                <th scope="col" class="bg-success">Ingredients</th>
+                <th scope="col" class="bg-success">Quantity</th>
+                <th scope="col" class="bg-success">Actions</th>
             </tr>
         </thead>
         <tbody>
-        
-         <?php
-         if (!empty($data['items'])){
-           	foreach ($data['items'] as $items) {
+        <?php
+        if (!empty($data['items'])){
+          foreach ($data['items'] as $items) {
               echo "<tr>
               <td>$items->name</td>
               <td>$items->quantity</td>
               <td><a type='button' href='".BASE."/Inventory/addQuantity/".$items->inventory_id."/' class='btn btn-success'>+</a> <a type='button' href='".BASE."/Inventory/removeQuantity/".$items->inventory_id."/' class='btn btn-danger'>-</a></td>
               <tr>";
             }
-			    } ?>
+            } ?>
         <tbody>
     </table>
 </div>

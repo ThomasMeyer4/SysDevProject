@@ -58,8 +58,26 @@
   <h1 class="display-4">Website Management</h1>
   </br>
 </div>
-<a href='<?=BASE?>/Product/addProduct'>Add New Product</a>
-<div class="container">
+</br>
+<div class="container-fluid">
+<div class="d-flex justify-content-end">
+<form action="" method="post" class="form-inline mb-2 mb-lg-0">
+	<input type="search" name="input" placeholder="" aria-label="Search">
+  <button type="submit" name="search" class="btn btn-success">
+  <i class="fa fa-search"></i>
+  </button>
+</form>
+</div>
+</div>
+</br>
+<div class="container-fluid">
+<div class="d-flex justify-content-lg-center">
+<form action="<?=BASE?>/Product/addProduct">
+  <button class="btn btn-success me-2" type="submit">Add New Product <i class="fas fa-plus"></i></button>
+</form>
+</div>
+</div>
+<div class="container-fluid">
   <section class="card-container">
       <?php
 			foreach ($data['product'] as $product) {

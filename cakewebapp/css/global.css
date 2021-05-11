@@ -94,22 +94,7 @@ background-color: white;
   color:aliceblue;
 }
 
-input[type=submit] {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	text-decoration: none;
-	margin: 4px 2px;
-	cursor: pointer;
-}
 
-input{
-	border-radius: 25px;
-    border: 2px solid #4CAF50 ;
-    padding: 20px; 
-    width: 200px;
-    height: 15px;  
-}
 
 #pending {
 	color: blue;
@@ -122,5 +107,7 @@ input{
 #denied {
 	color: red;
 }
+
+
 
 

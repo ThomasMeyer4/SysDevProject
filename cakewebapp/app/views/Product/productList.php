@@ -58,8 +58,8 @@
   <h1 class="display-4">Website Management</h1>
   </br>
 </div>
-<a href='<?=BASE?>/Product/addProduct'>Add New Product</a>
-<div class="container">
+</br>
+<div class="container-fluid">
 <div class="d-flex justify-content-end">
 <form action="" method="post" class="form-inline mb-2 mb-lg-0">
 	<input type="search" name="input" placeholder="" aria-label="Search">
@@ -69,12 +69,20 @@
 </form>
 </div>
 </div>
-<div class="container">
-  <section class="card-container">
+</br>
+<div class="container-fluid">
+<div class="d-flex justify-content-lg-center">
+<form action="<?=BASE?>/Product/addProduct">
+  <button class="btn btn-success me-2" type="submit">Add New Product <i class="fas fa-plus"></i></button>
+</form>
+</div>
+</div>
+<div class="container-fluid">
+<section class="card-container">
       <?php
 			foreach ($data as $product) {
-				echo "<div class='col-sm-3'>
-						<div class='card' style='width: 15rem;'>
+				echo "
+						<div class='card' style='width: 20rem;'>
 						<div class='card-header text-center'>$product->name</div>
 							<img class='card-img-top smallimg mx-auto' src='" . BASE . "/uploads/$product->filename' alt='$product->name' style='width:150px;height:150px'>
 							<div class='card-body'>
@@ -86,7 +94,7 @@
 									<a href='" . BASE . "/Product/delete/$product->product_id' class='btn btn-danger btn-sm'>Delete</a>
 							</div>
 						</div>
-					</div>";
+					";
 			} ?>
     </section>
 </div>

@@ -31,7 +31,7 @@
                 } else {
                     $this->view('Order/orderForm');
             }
-        }
+        }                                                                   
 
         function sale() {
             $order = new \App\models\Order();
