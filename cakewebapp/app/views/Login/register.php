@@ -3,31 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="./../css/registration.css" rel="stylesheet">
 
     <title>Register</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="./../css/signin.css" rel="stylesheet">
+  <link href="./../css/signin.css" rel="stylesheet">
   </head>
-
-  <body class="text-center" style="height: 100%;">
+  <body class="container">
     <div class="container">
       <form action="" method="post">
-        <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
-        <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
-        <input type="password" id="inputConfirmPassword" name="confirm_password" class="form-control" placeholder="Retype Password">
-        <br class="checkbox mb-3">
-        </br>
-        <input type="submit" class="btn btn-lg btn-primary" name="action" value="Register"></input>
-        <p class="mt-5 mb-3 text-muted">&copy;</p>
-      </form>
-    </div>
-  </body>
+        <div class='bold-line'></div>
+            <div class='window'>
+            <div class='overlay'></div>
+            <div class='content'>
+            <div class='welcome'>Register</div>
+            <div class='input-fields'>
+            <input type='text' placeholder='Username' for="inputUsername" name="username" class='input-line full-width'></input>
+            <input type='password' placeholder='Password' for="inputPassword" name="password" class='input-line full-width'></input>
+            <input type='password' placeholder='Retype Password' for="inputConfirmPassword" name="confirm_password" class='input-line full-width'></input>
+            <input type='text' placeholder='First Name' name="first_name" class='input-line full-width'></input>
+            <input type='text' placeholder='Last Name' name="last_name" class='input-line full-width'></input>
+            <input type='text' placeholder='Address' name="address" class='input-line full-width'></input>
+            <input type='text' placeholder='Phone' name="phone" class='input-line full-width'></input>
+            <div><button class='ghost-round full-width' type="submit" name="action" value="Register">Create Account</button></div>
+            <a href="<?=BASE?>/Login/login">Already have an account? Login now!</a>
+            </div>
+  </div>
+</div>
+</form>
+</div>
+</body>
 </html>

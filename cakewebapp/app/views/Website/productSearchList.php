@@ -5,56 +5,45 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./../css/global.css">
   <link rel="stylesheet" type="text/css" href="./../css/products.css">
+  <link rel="stylesheet" type="text/css" href="./../css/navigation.css">
+  <link rel="stylesheet" href="./../css/slicknav.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-static-top navbar-light bg-white navbar-custom">
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarLeftAlignExample"
-      aria-controls="navbarLeftAlignExample"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-      <ul class="navbar-nav nav-justified me-auto ">
-        <li class="nav-item">
-          <a class="nav-link" href='<?=BASE?>/Website/homepage'>Home<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href='<?=BASE?>/Website/products'>Products<span class="sr-only"></span></a>
-        </li>
-      </ul>
+<div id="main_menu">
+            <div class="logo_area">
+                <a href=""><img src="./../images/Logo2.png" class="brand-logo center rounded-circle"  width="100%" alt=""></a>
+            </div>
+            <div class="inner_main_menu">
+                <ul id="menu">
+                    <li><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                    <li><a href='<?=BASE?>/Website/products'>Products</a></li>
+                    <li><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                    <li><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                    <li><a href='<?=BASE?>/Login/login'>Account</a></li>
+                    <li><a href='<?=BASE?>/Login/login'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="./../js/jquery.slicknav.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#menu').slicknav();
+        });
+    </script>
+</br></br></br>
+<div style="background: url(./../images/cake4.jpg)" class="jumbotron bg-cover text-white">
+<div class="container py-5 text-center">
+        <h1 class="display-4 font-weight-bold">Products</h1>
+        <p class="font-italic mb-0">Check out our recent custom cakes!</p>
+        <p class="font-italic">CakeArtByJames</p>
     </div>
-  <div
-      class="collapse navbar-collapse justify-content-center"
-      id="navbarCenteredExample"
-      >
-      <ul class="navbar-nav">
-      <img src="./../images/Logo.png" class="brand-logo center rounded-circle"  width="100px">
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-      <ul class="navbar-nav ms-auto pe-5">
-        <li class="nav-item">
-          <a class="nav-link" href='<?=BASE?>/Website/aboutUs'>About us<span class="sr-only"></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href='<?=BASE?>/Website/contacts'>Contacts<span class="sr-only"></span></a>
-        </li>
-          <form action="<?=BASE?>/Login/login">
-            <button class="btn btn-outline-success me-2" type="submit">Login</button>
-          </form>
-      </ul>
-    </div>
-  </div>
-</nav>
+</div>
 </br></br></br></br></br></br>
 <div class="container">
 <div class="d-flex justify-content-end">
@@ -109,10 +98,18 @@ echo "<div class='flip-card-container' style='--hue: 220'>
 </section>
 </div>
 <br><br><br>
-<div class="footer">---------- Follow Us
-  <br>
-<img src="./../images/facebook.png" width="3%">
-<img src="./../images/instagram.png" width="3%">
+<div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Login/login'>Login</a></li>
+            </ul>
+            <p class="copyright">CakeArtByJames © 2021</p>
+        </footer>
 </div>
 </body>
 </html>

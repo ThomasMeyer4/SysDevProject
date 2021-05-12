@@ -21,6 +21,13 @@
             return $stmt->fetchAll();
         }
 
+        public function getAllRequestFromClient($client_id) {
+            $stmt = self::$connection->prepare("SELECT * FROM cake_order WHERE client_id = :client_id");
+            $stmt->execute(['client_id'=>$client_id]);
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Order");
+            return $stmt->fetchAll();
+        }
+
         public function getAll() {
             $stmt = self::$connection->prepare("SELECT * FROM cake_order");
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Order");
@@ -39,6 +46,14 @@
             $stmt = self::$connection->prepare("SELECT SUM(confirmation LIKE '%pending%') AS pendingCount,
                                                         SUM(confirmation LIKE '%accepted%') AS acceptedCount,
                                                         SUM(confirmation LIKE '%denied%') AS deniedCount FROM cake_order");
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Order");
+            $stmt->execute();
+            return $stmt->fetch();
+        }
+
+        public function countAllStatus() {
+            $stmt = self::$connection->prepare("SELECT SUM(status LIKE '%ongoing%') AS ongoingCount,
+                                                        SUM(status LIKE '%completed%') AS completedCount FROM cake_order");
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Order");
             $stmt->execute();
             return $stmt->fetch();
@@ -68,5 +83,12 @@
             $stmt = self::$connection->prepare("DELETE FROM cake_order WHERE order_id=:order_id");
             $stmt->execute(['order_id' => $this->order_id]);
         }
+        
+        public function modify(){
+            $stmt = self::$connection->prepare("UPDATE cake_order SET description = :description, confirmation = :confirmation, status = :status, price = :price WHERE order_id = :order_id");
+            $stmt->execute(['order_id'=>$this->order_id, 'description'=>$this->description,'confirmation'=>$this->confirmation, 'status'=>$this->status, 'price'=>$this->price]);
+        }
+        
+
     }
 ?>

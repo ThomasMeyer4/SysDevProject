@@ -44,8 +44,8 @@
         }
 
         public function insert(){
-            $stmt = self::$connection->prepare("INSERT INTO staff(first_name, last_name, position, username, password_hash) VALUES (:first_name, :last_name, :position, :username, :password_hash)");
-            $stmt->execute(['first_name'=>$this->first_name, 'last_name'=>$this->last_name, 'position'=>$this->position, 'username'=>$this->username, 'password_hash'=>$this->password_hash]);
+            $stmt = self::$connection->prepare("INSERT INTO staff(first_name, last_name, position, user_id) VALUES (:first_name, :last_name, :position, :user_id)");
+            $stmt->execute(['first_name'=>$this->first_name, 'last_name'=>$this->last_name, 'position'=>$this->position, 'user_id'=>$this->user_id]);
         }
 
         public function update2fa() {

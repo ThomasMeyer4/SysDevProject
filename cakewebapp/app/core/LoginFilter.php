@@ -1,6 +1,5 @@
 <?php
     namespace App\core;
-    
     #[\Attribute]
     class LoginFilter {
         public function execute() {

@@ -51,8 +51,13 @@
 
         public function delete(){
 		    $stmt = self::$connection->prepare("DELETE FROM product WHERE product_id=:product_id");
-		    $stmt->execute(['product_id' => $this->product_id]);
+		    $stmt->execute(['product_id'=>$this->product_id]);
 	    }
+
+        public function modify(){
+            $stmt = self::$connection->prepare("UPDATE product SET name = :name, description = :description, price = :price WHERE product_id = :product_id");
+            $stmt->execute(['product_id'=>$this->product_id, 'name'=>$this->name,'description'=>$this->description,'price'=>$this->price]);
+        }
 
     }
 ?>

@@ -1,6 +1,7 @@
 <?php
     namespace App\controllers;
 
+    #[\App\core\StaffFilter]
     #[\App\core\LoginFilter]
     class InventoryController extends \App\core\Controller {   
         function index(){   
@@ -21,11 +22,13 @@
                 $inventory->name = $_POST['name'];
                 $inventory->quantity = $_POST['quantity'];
                 $inventory->insert();
-                header('location:'.BASE.'/Inventory/index/');
+                header('location:'.BASE.'/Inventory/index');
             } else {
                 $this->view('Inventory/inventoryForm');
             }
         }
+
+        
 
         function addQuantity($inventory_id) {
             $inventory = new \App\models\Inventory();
@@ -34,19 +37,20 @@
             $quantity = $inventory->quantity + 1;  
             $inventory->updateQuantity($quantity);
             header('location:'.BASE.'/Inventory/index');
+            
         }
 
+        
         function removeQuantity($inventory_id) {
             $inventory = new \App\models\Inventory();
             $inventory = $inventory->findByInventoryID($inventory_id);
-            $quantity = $inventory->getQuantityByInventoryID($inventory_id);
-            if ($inventory->quantity > 0) {
-                $quantity = $inventory->quantity - 1;       
-                $inventory->updateQuantity($quantity);
-            }
-            
+            $quantity = $inventory->getQuantityByInventoryID($inventory_id);   
+            $quantity = $inventory->quantity - 1;  
+            $inventory->updateQuantity($quantity);
             header('location:'.BASE.'/Inventory/index');
         }
+
+
     }
     
     

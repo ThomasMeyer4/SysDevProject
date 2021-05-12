@@ -21,6 +21,13 @@
             return $stmt->fetch();
         }
 
+        public function findClientProfile($user_id){
+            $stmt = self::$connection->prepare("SELECT * FROM client WHERE user_id = :user_id");
+            $stmt->execute(['user_id'=>$user_id]);
+            $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "App\\models\\Client");
+            return $stmt->fetch();
+        }
+
         public function findBySearch($search) {
             $stmt = self::$connection->prepare("SELECT * FROM client WHERE username LIKE :search");
             $stmt->setFetchMode(\PDO::FETCH_GROUP|\PDO::FETCH_CLASS, "\\App\\models\\Client");
@@ -37,8 +44,8 @@
         }
 
         public function insert(){
-            $stmt = self::$connection->prepare("INSERT INTO staff(first_name, last_name, address, phone, username, password_hash) VALUES (:first_name, :last_name, :address, :phone, :username, :password_hash)");
-            $stmt->execute(['first_name'=>$this->first_name, 'last_name'=>$this->last_name, 'address'=>$this->address, 'phone'=>$this->phone, 'username'=>$this->username, 'password_hash'=>$this->password_hash]);
+            $stmt = self::$connection->prepare("INSERT INTO client(first_name, last_name, address, phone, user_id) VALUES (:first_name, :last_name, :address, :phone, :user_id)");
+            $stmt->execute(['first_name'=>$this->first_name, 'last_name'=>$this->last_name, 'address'=>$this->address, 'phone'=>$this->phone, 'user_id'=>$this->user_id]);
         }
 
         public function update2fa() {

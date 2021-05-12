@@ -8,9 +8,6 @@
             $confirmations = $order->countAllConfirmation();
             $this->view('Home/staffHomepage', ['orders'=>$orders, 'confirmations'=>$confirmations]);
         }
-
-
-        
     }
     
 ?>
