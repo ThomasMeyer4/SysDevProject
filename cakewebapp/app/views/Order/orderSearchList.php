@@ -75,19 +75,21 @@
                 <th scope="col" class="bg-success">Date</th>
                 <th scope="col" class="bg-success">Price</th>
                 <th scope="col" class="bg-success">Status</th>
+                <th scope="col" class="bg-success">Actions</th>
             </tr>
         </thead>
         <tbody>
         <?php
-            foreach($data as $item){
+            foreach($data as $order){
               echo "
               <tr>
-                  <td>$item->order_id</td>
-                  <td>$item->description</td>
-                  <td>$item->date</td>
-                  <td>$item->price</td>
-                  <td>$item->status</td>
-              <tr>";
+                  <td>$order->order_id</td>
+                  <td>$order->description</td>
+                  <td>$order->date</td>
+                  <td>$order->price</td>
+                  <td>$order->status</td>
+                  <td><a class='btn btn-success' href='".BASE."/Order/modify/$order->order_id'>Edit</a></td>
+              </tr>";
             }
         ?>
         <tbody>

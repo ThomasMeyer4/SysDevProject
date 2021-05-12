@@ -64,7 +64,7 @@
 <div class="d-flex justify-content-lg-center">
 		<form method="post" action="" enctype="multipart/form-data">
 			<label>Description</label>
-			<textarea id="description" name="description" rows="15" cols="100" style="resize: none;" value="<?= $data['order']->description ?>"></textarea><br>
+			<textarea name="description" class="form-control" placeholder="Description"><?= $data['order']->description ?></textarea><br>
 			<label>Confirmation</label>
 			<select name="confirmation" class="form-control">
 				<option><?=$data['order']->confirmation?></option>
