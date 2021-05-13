@@ -34,7 +34,7 @@
                             $product->price = $_POST['price'];
                             $product->filename = $targetFile;
                             $product->insert();
-                            header('location:'.BASE.'/Product/productForm');
+                            header('location:'.BASE.'/Product/index');
                         }else{
                             echo 'error';
                         }
@@ -47,7 +47,7 @@
         function delete($product_id){
 			$product = new \App\models\Product();
 			$product = $product->findByProductID($product_id);
-			$product->delete(); // can't delete if sales are recorded
+			$product->delete(); 
 			header('location:'.BASE.'/Product/index');
         }
 

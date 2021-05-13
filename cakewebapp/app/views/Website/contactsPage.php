@@ -52,11 +52,9 @@
   <tr>
     <td class="contact"><img src="./../images/telephone.png" width="5%"> (514) 111-1111
       <br>
-      <img src="./../images/mail.png" width="5%"> aaa@aaaaaaa.com
+      <img src="./../images/mail.png" width="5%"> info@cakeartbyjames.com
     </td>
-
   </tr>
- 
   <tr>
     <td></td>
   </tr>  
@@ -65,7 +63,7 @@
       </br></br>
 <div class="footer-basic">
   <footer>
-      <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+  <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
       <ul class="list-inline">
           <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
           <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>

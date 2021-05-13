@@ -76,6 +76,14 @@
                 $this->view('Order/orderModify', ['order' => $order]);
             }
 	    }
+        
+        #[\App\core\StaffFilter]
+        function delete($order_id){
+            $order = new \App\models\Order();
+			$order = $order->findByOrderId($order_id);
+			$order->delete(); 
+			header('location:'.BASE.'/Order/index');
+	    }
     } 
 	
 

@@ -9,5 +9,4 @@
             $this->view('Home/staffHomepage', ['orders'=>$orders, 'confirmations'=>$confirmations]);
         }
     }
-    
 ?>

@@ -53,9 +53,9 @@
 <div class="container">
 <div class="d-flex justify-content-lg-center">
 <form action="" method="post" enctype="multipart/form-data">
-	<label>Name: <input type="text" name="name" /></label><br />
+	<label>Name: <input type="text" name="name" required/></label><br />
     <br>
-	<label>Quantity: <input type="text" name="quantity" /></label><br />
+	<label>Quantity: <input type="text" name="quantity" required/></label><br />
     <br>
 	<input class="btn btn-success" type="submit" name="action" />
 </form>

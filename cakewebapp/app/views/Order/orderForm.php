@@ -63,9 +63,9 @@
 <div class="orderForm">
 <div class="d-flex justify-content-lg-center">
     <form action="" method="post" enctype="multipart/form-data">
-        <label>Client id: <input type="text" name="client_id" /></label><br /><br />
-        <label>Description: <textarea id="description" name="description" rows="15" cols="100" style="resize: none;"></textarea><br></label><br /><br /></br>
-        <label>Price: <input type="number" name="price" /></label><br />
+        <label>Client id: <input type="text" name="client_id" required/></label><br /><br />
+        <label>Description: <textarea id="description" name="description" rows="15" cols="100" style="resize: none;" required></textarea><br></label><br /><br /></br>
+        <label>Price: <input type="number" name="price" required/></label><br />
         <br>
 		<input type="submit" name="action" />
 	</form>
@@ -74,9 +74,19 @@
 </div>
 </br>
 </br>
-</br>
-</br>
-</br>
-</br>
+</br></br></br></br></br></br>
+<div class="footer-basic">
+        <footer>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Login/login'>Login</a></li>
+            </ul>
+            <p class="copyright">CakeArtByJames © 2021</p>
+        </footer>
+</div>
 </body>
 </html>

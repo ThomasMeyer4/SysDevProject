@@ -101,7 +101,7 @@ echo "<div class='flip-card-container' style='--hue: 220'>
 <br><br><br>
 <div class="footer-basic">
         <footer>
-            <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+        <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>

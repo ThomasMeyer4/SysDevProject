@@ -40,7 +40,6 @@
 <br><br><br><br><br><br><br><br><br>
 <div class="container">
   <div class="page">HOME</div>
-</div>
 
 
 <div class="divider">
@@ -56,22 +55,22 @@
     <div class="carousel-item active">
       <img src="./../images/cake2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./../images/cake3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./../images/cake4.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
   </div>
@@ -98,22 +97,22 @@
     <div class="carousel-item active">
       <img src="./../images/cake2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./../images/cake3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="./../images/cake4.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
   </div>
@@ -126,9 +125,10 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div>
 <div class="footer-basic">
         <footer>
-            <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+        <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>

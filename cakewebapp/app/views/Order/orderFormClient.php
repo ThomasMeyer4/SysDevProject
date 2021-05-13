@@ -65,7 +65,7 @@
     <div class="d-flex justify-content-lg-center">
         <form action="" method="post" enctype="multipart/form-data">
             <h4>Description of Order:</h4>
-            <textarea id="description" name="description" rows="15" cols="100" style="resize: none;"></textarea><br>
+            <textarea id="description" name="description" rows="15" cols="100" style="resize: none;" required></textarea><br>
             <br>
             <button class="btn btn-success me-2" name="action" type="submit">Submit Request</button>
 	    </form>
@@ -86,9 +86,19 @@
 <div class='container'>
 </br>
 </br>
-</br>
-</br>
-</br>
-</br>
+</br></br></br></br></br></br>
+<div class="footer-basic">
+        <footer>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Login/login'>Login</a></li>
+            </ul>
+            <p class="copyright">CakeArtByJames © 2021</p>
+        </footer>
+</div>
 </body>
 </html>

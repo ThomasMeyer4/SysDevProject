@@ -22,12 +22,12 @@
             <div class='content'>
             <div class='welcome'>Register</div>
             <div class='input-fields'>
-            <input type='text' placeholder='Username' for="inputUsername" name="username" class='input-line full-width'></input>
-            <input type='password' placeholder='Password' for="inputPassword" name="password" class='input-line full-width'></input>
-            <input type='password' placeholder='Retype Password' for="inputConfirmPassword" name="confirm_password" class='input-line full-width'></input>
-            <input type='text' placeholder='First Name' name="first_name" class='input-line full-width'></input>
-            <input type='text' placeholder='Last Name' name="last_name" class='input-line full-width'></input>
-            <input type='text' placeholder='Position' name="position" class='input-line full-width'></input>
+            <input type='text' placeholder='Username' for="inputUsername" name="username" class='input-line full-width' required></input>
+            <input type='password' placeholder='Password' for="inputPassword" name="password" class='input-line full-width' required></input>
+            <input type='password' placeholder='Retype Password' for="inputConfirmPassword" name="confirm_password" class='input-line full-width' required></input>
+            <input type='text' placeholder='First Name' name="first_name" class='input-line full-width' required></input>
+            <input type='text' placeholder='Last Name' name="last_name" class='input-line full-width' required></input>
+            <input type='text' placeholder='Position' name="position" class='input-line full-width' required></input>
             <div><button class='ghost-round full-width' type="submit" name="action" value="Register">Create Account</button></div>
             <div><a href="<?= BASE ?>/Settings/index">Cancel</a></div>
         </div>

@@ -90,7 +90,7 @@
                   <td>$order->price</td>
                   <td>$order->confirmation</td>
                   <td>$order->status</td>
-                  <td><a class='btn btn-success' href='" . BASE . "/Order/detail/$order->order_id'>View Order</a>&nbsp&nbsp&nbsp";
+                  <td><a class='btn btn-success' href='" . BASE . "/Order/detail/$order->order_id'>View Order</a>&nbsp&nbsp<a class='btn btn-danger' href='" . BASE . "/Order/delete/$order->order_id'>Delete</a>&nbsp";
                       if ($order->status == "ongoing")
                         echo "<a class='btn btn-success' href='" . BASE . "/Order/modify/$order->order_id'>Edit</a></td>";
               echo "<tr>";
@@ -110,10 +110,20 @@
 </div>
 </br>
 </br>
-</br>
-</br>
-</br>
-</br>
+</br></br></br></br></br></br>
+<div class="footer-basic">
+        <footer>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Login/login'>Login</a></li>
+            </ul>
+            <p class="copyright">CakeArtByJames © 2021</p>
+        </footer>
+</div>
 </body>
 </html>
 

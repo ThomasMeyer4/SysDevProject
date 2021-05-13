@@ -1,10 +1,6 @@
 <?php
     namespace App\controllers;
     class WebsiteController extends \App\core\Controller {   
-        function index() {
-            $this->view('Website/index');
-        }
-
         function homepage() {
             $this->view('Website/websiteHomePage');
         }
@@ -27,10 +23,6 @@
                 $products = $product->getAll();
                 $this->view('Website/productsPage', $products);
             } 
-        }
-
-        function moreDetails(){
-
         }
     }
     

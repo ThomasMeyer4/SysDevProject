@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2021 at 11:19 PM
+-- Generation Time: May 13, 2021 at 05:05 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -40,6 +40,17 @@ CREATE TABLE `cake_order` (
   `price` decimal(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cake_order`
+--
+
+INSERT INTO `cake_order` (`order_id`, `client_id`, `description`, `date`, `confirmation`, `status`, `price`) VALUES
+(2, 2, 'I would like to request an order of a red velvet cake with the group red velvet as the main theme of the cake! In terms of size,', '2021-05-12', 'pending', 'ongoing', '0.00'),
+(3, 3, 'I would like to order a cake with Jungkook as the main theme. In terms of flavor and size, medium is fine and chocolate would be', '2021-05-12', 'pending', 'ongoing', '0.00'),
+(4, 3, 'I would like to order a cake with anime as the main theme. In terms of flavor and size, small is good enough and vanilla would b', '2021-05-12', 'accepted', 'completed', '45.00'),
+(6, 3, 'I would like a big cake!', '2021-05-12', 'pending', 'ongoing', '0.00'),
+(7, 1, 'I would like a programming themed cake with a red velvet flavour. ', '2021-05-13', 'pending', 'ongoing', '10.00');
+
 -- --------------------------------------------------------
 
 --
@@ -61,7 +72,9 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `user_id`, `first_name`, `last_name`, `address`, `phone`) VALUES
-(1, 1, 'Herbert', 'Domingo', '6363 Trans Island Ave', '4935861266');
+(1, 1, 'Herbert', 'Domingo', '6363 Trans Island Ave', '4935861266'),
+(2, 3, 'Herbert', 'Domingo', '7578 Trans Island Ave', '1968653698'),
+(3, 4, 'Herbert', 'Domingo', '6312 Trans Island Ave.', '4935861266');
 
 -- --------------------------------------------------------
 
@@ -75,6 +88,18 @@ CREATE TABLE `inventory` (
   `name` varchar(32) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `inventory`
+--
+
+INSERT INTO `inventory` (`inventory_id`, `name`, `quantity`) VALUES
+(1, 'Eggs', 123),
+(2, 'Milk', 14),
+(3, 'Butter', 15),
+(4, 'Flour', 12),
+(5, 'Chocolate', 123),
+(6, 'Icing Sugar', 123);
 
 -- --------------------------------------------------------
 
@@ -99,9 +124,11 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `name`, `staff_id`, `description`, `price`, `filename`) VALUES
 (1, 'Mango Cake', 2, 'Mango Tres Leches Cake', '15.99', '609c615c89284.jpg'),
 (2, 'Chocolate Cake', 2, 'Divine Chocolate Moist Cake', '12.99', '609c61bdf1379.jpg'),
-(3, 'Camera Cake', 2, 'Custom Designed Camera Cake', '70.99', '609c61e765841.jpg'),
+(3, 'Camera Cake', 2, 'Custom Designed Camera Cake', '160.99', '609c61e765841.jpg'),
 (4, 'Lion Cake', 2, 'Lion Cake for Kings!', '60.99', '609c6204e626b.jpg'),
-(5, 'Valorant Themed Cake', 2, 'Valorant Cake for Gamers!', '40.99', '609c623391e24.jpg');
+(5, 'Valorant Themed Cake', 2, 'Valorant Cake for Gamers!', '41.99', '609c623391e24.jpg'),
+(6, 'LV Cake', 1, 'Custom LV Cake ', '160.99', '609c7608d4139.jpg'),
+(9, 'Strawberry Cake', 1, 'Cake', '60.99', '609c769c620f4.jpg');
 
 -- --------------------------------------------------------
 
@@ -146,7 +173,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password_hash`, `is_staff`) VALUES
 (1, 'admin', '$2y$10$kP2aIPKuInjfKjmqASJEWedHLgYXKg2pP0ESCMt9u8WICDC7gimi2', 1),
-(2, 'Staff', '$2y$10$Qmx4P.XQgDAiruqhZc1c7uk7iADouEHbEz1SEY9CR7Qde5wr/lU3e', 1);
+(2, 'Staff', '$2y$10$Qmx4P.XQgDAiruqhZc1c7uk7iADouEHbEz1SEY9CR7Qde5wr/lU3e', 1),
+(3, 'herbert', '$2y$10$f/6WoDylMywlyCnCjnD5AuLuVrIu0TSpN6GtfRNWg0XrTe5aOjJ0W', 0),
+(4, 'herbert1', '$2y$10$T4kVbX9MLlAZ95sqM0uUuOXGQcTf15gDycw/2NmL.OJzgRCmMKuqu', 0);
 
 --
 -- Indexes for dumped tables
@@ -200,25 +229,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cake_order`
 --
 ALTER TABLE `cake_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `inventory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -230,7 +259,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

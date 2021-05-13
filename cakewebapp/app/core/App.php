@@ -3,7 +3,7 @@
     
     class App {
         protected $controller = 'App\\controllers\\WebsiteController';
-        protected $method = 'index';
+        protected $method = 'homepage';
         protected $params = [];
 
         public function __construct() {

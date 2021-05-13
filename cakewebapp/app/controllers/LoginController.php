@@ -116,9 +116,10 @@
     
         function logout(){
             session_destroy();
-            header('location:'.BASE.'/Default/index');
+            header('location:'.BASE.'/Website/homepage');
         }
         
+        #[\App\core\LoginFilter]
         function changePassword() {
             if(isset($_POST['action'])){
                 $user = new \App\models\User();

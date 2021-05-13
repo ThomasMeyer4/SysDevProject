@@ -54,13 +54,27 @@
 <div class="container">
 <div class="d-flex justify-content-lg-center">
 <form action="" method="post" enctype="multipart/form-data">
-        <label>Name: <input type="text" name="name" /></label><br /><br />
-        <label>Description: <input type="text" name="description" /></label><br /><br />
-        <label>Price <input type="text" name="price" /></label><br /><br />
-        <label>Select an image file to upload: <input type="file" name="myImage" /></label><br>
+        <label>Name: <input type="text" name="name" required /></label><br /><br />
+        <label>Description: <input type="text" name="description" required/></label><br /><br />
+        <label>Price <input type="text" name="price" required /></label><br /><br />
+        <label>Select an image file to upload: <input type="file" name="myImage" required/></label><br>
 		<input type="submit" name="action" />
 </form>
 </div>
+</div>
+</br></br></br></br></br></br>
+<div class="footer-basic">
+        <footer>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/aboutUs'>About Us</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Website/contacts'>Contacts</a></li>
+                <li class="list-inline-item"><a href='<?=BASE?>/Login/login'>Login</a></li>
+            </ul>
+            <p class="copyright">CakeArtByJames © 2021</p>
+        </footer>
 </div>
 </body>
 </html>

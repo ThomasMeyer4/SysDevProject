@@ -27,9 +27,7 @@
                 $this->view('Inventory/inventoryForm');
             }
         }
-
         
-
         function addQuantity($inventory_id) {
             $inventory = new \App\models\Inventory();
             $inventory = $inventory->findByInventoryID($inventory_id);
@@ -39,7 +37,6 @@
             header('location:'.BASE.'/Inventory/index');
             
         }
-
         
         function removeQuantity($inventory_id) {
             $inventory = new \App\models\Inventory();
@@ -49,9 +46,5 @@
             $inventory->updateQuantity($quantity);
             header('location:'.BASE.'/Inventory/index');
         }
-
-
     }
-    
-    
 ?>

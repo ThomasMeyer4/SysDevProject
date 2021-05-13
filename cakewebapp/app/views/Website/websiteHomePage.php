@@ -3,10 +3,10 @@
 <head>
   <title>Dess'Art</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link href="./../css/global.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./../css/home.css">
-  <link rel="stylesheet" type="text/css" href="./../css/navigation.css">
-  <link rel="stylesheet" href="./../css/slicknav.min.css">
+  <link href="<?=BASE?>/css/global.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?=BASE?>/css/home.css">
+  <link rel="stylesheet" type="text/css" href="<?=BASE?>/css/navigation.css">
+  <link rel="stylesheet" href="<?=BASE?>/css/slicknav.min.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -16,7 +16,7 @@
 <body>
 <div id="main_menu">
             <div class="logo_area">
-                <a href=""><img src="./../images/Logo2.png" class="brand-logo center rounded-circle"  width="100%" alt=""></a>
+                <a href=""><img src="<?=BASE?>/images/Logo2.png" class="brand-logo center rounded-circle"  width="100%" alt=""></a>
             </div>
             <div class="inner_main_menu">
                 <ul id="menu">
@@ -30,7 +30,7 @@
             </div>
         </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="./../js/jquery.slicknav.min.js"></script>
+    <script src="<?=BASE?>/js/jquery.slicknav.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('#menu').slicknav();
@@ -39,7 +39,7 @@
     </br></br></br></br></br></br>
 <div class="container">
   <div class="page">HOME</div>
-</div>
+
 
 
 <div class="divider">
@@ -53,24 +53,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./../images/cake2.png" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./../images/cake3.jpg" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./../images/cake4.jpg" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake4.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
   </div>
@@ -95,24 +95,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./../images/cake2.png" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake2.png" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./../images/cake3.jpg" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="./../images/cake4.jpg" class="d-block w-100" alt="...">
+      <img src="<?=BASE?>/images/cake4.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+        <h5>CakeArt</h5>
+        <p>The Art of Desserts</p>
       </div>
     </div>
   </div>
@@ -125,9 +125,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div>
+      </br></br></br></br></br></br>
 <div class="footer-basic">
         <footer>
-            <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+            <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>

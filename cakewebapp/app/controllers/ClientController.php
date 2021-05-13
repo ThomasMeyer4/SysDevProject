@@ -36,5 +36,4 @@
             $this->view('Client/accountPage', $orders);
         }
     }
-    
 ?>

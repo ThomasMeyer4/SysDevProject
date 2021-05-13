@@ -27,7 +27,6 @@
                     <li><a href='<?=BASE?>/Client/contacts'>Contacts</a></li>
                     <li><a href='<?=BASE?>/Client/account'>Account</a></li>
                     <li><a href='<?=BASE?>/Login/logout'>Logout</a></li>
-                    
                 </ul>
             </div>
         </div>
@@ -58,7 +57,7 @@ He worked in pastries since the age of 22 and has combined his skills with his c
 <br><br><br><br><br><br><br><br><br>
 <div class="footer-basic">
         <footer>
-            <div class="social"><a href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
+        <div class="social"><a target="_blank" href="https://www.instagram.com/cakeartbyjames/"><i class="icon ion-social-instagram"></i></a><a target="_blank" href="https://www.facebook.com/cakeartbyjames"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/homepage'>Home</a></li>
                 <li class="list-inline-item"><a href='<?=BASE?>/Website/products'>Products</a></li>
